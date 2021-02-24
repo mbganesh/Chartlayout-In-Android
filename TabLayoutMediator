@@ -1,0 +1,40 @@
+viewPager2 = view.findViewById(R.id.SubjectContainerId);
+        viewPager2.setAdapter(new PageAdapter(getActivity()));
+
+        tabLayoutAbout = view.findViewById(R.id.tabLayoutId);
+
+        String subList[] = {"Physics" , "Maths" , "Java" , "Python" , "C#"};
+
+        TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(
+                tabLayoutAbout, viewPager2, new TabLayoutMediator.TabConfigurationStrategy() {
+            @Override
+            public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
+
+                switch (position) {
+                    case 0:
+                        tab.setText(subList[0]);
+                        break;
+
+                    case 1:
+                        tab.setText(subList[1]);
+                        break;
+
+                    case 2:{
+                        tab.setText(subList[2]);
+                        break;
+                    }
+                    case 3:{
+                        tab.setText(subList[3]);
+                        break;
+                    }
+                    case 4:
+                        tab.setText(subList[4]);
+                        break;
+                }
+            }
+        }
+        );
+        tabLayoutMediator.attach();
+        
+        
+      
