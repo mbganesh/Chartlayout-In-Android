@@ -1,0 +1,31 @@
+
+public class PageAdapter extends FragmentStateAdapter {
+
+    public PageAdapter(@NonNull FragmentActivity fragmentActivity) {
+        super(fragmentActivity);
+    }
+
+    @NonNull
+    @Override
+    public Fragment createFragment(int position) {
+        switch (position){
+            case 0:
+                return new PhysicsFragment();
+            case 1:
+                return new MathsFragment();
+            case 2:
+                return new PhysicsFragment();
+            case 3:
+                return new MathsFragment();
+            case 4:
+                return new PhysicsFragment();
+            default:
+                return new MathsFragment();
+        }
+    }
+
+    @Override
+    public int getItemCount() {
+        return 5;
+    }
+}
